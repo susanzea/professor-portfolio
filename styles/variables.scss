@@ -1,5 +1,13 @@
+@import "./functions.scss";
+
 $font-weights: (
   "light": 300,
   "regular": 500,
   "bold": 700,
+);
+
+$font-sizes: (
+  "small": calculate-rem(16px),
+  "medium": calculate-rem(24px),
+  "large": calculate-rem(32px),
 );
