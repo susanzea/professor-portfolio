@@ -1,0 +1,16 @@
+@import "./mixins.scss";
+@import "./colors.scss";
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-size: 1rem;
+  background-color: $wild-sand;
+  color: $gun-powder;
+}
+
+.btn {
+  @include hover-lift();
+}
