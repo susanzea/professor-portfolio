@@ -1,7 +1,8 @@
 const Home = () => {
   return (
-    <div>
-      Homeee<button className="btn">hi</button>
+    <div className="page">
+      <h3>Homeee</h3>
+      <button className="btn">Curriculum Vitae</button>
     </div>
   );
 };

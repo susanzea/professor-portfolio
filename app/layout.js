@@ -1,7 +1,10 @@
 import { Open_Sans } from 'next/font/google';
 import '../styles/helper.scss';
 
-const openSans = Open_Sans({ subsets: ['latin'] });
+const openSans = Open_Sans({
+  weight: ['300', '500', '700'],
+  subsets: ['latin'],
+});
 
 export const metadata = {
   title: 'Aníbal González',
@@ -11,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={openSans.classes}>{children}</body>
+      <body className={`hi ${openSans.className}`}>{children}</body>
     </html>
   );
 }
