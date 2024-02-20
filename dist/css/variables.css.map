@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAEA,WAAW;AAeX,iBAAiB;AAgBjB,aAAa",
+"sources": ["../../styles/variables.scss"],
 "names": [],
 "file": "variables.css"
 }

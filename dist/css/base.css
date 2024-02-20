@@ -1,10 +1,18 @@
+/* fonts */
+/* box shadows */
+/* buttons */
+/* fonts */
+/* box shadows */
+/* buttons */
 a {
   text-decoration: none; }
 
 body {
-  font-size: 1rem;
+  font-size: font-weight(small);
+  color: #474853;
   background-color: #f4f4f4;
-  color: #474853; }
+  line-height: 1;
+  font-weight: 500; }
 
 .btn {
   transition: transform 150ms ease-in-out;
