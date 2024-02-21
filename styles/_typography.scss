@@ -1,0 +1,28 @@
+@import "./colors";
+@import "./variables";
+@import "./functions";
+@import "./mixins";
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+h1,
+.h1 {
+  @include font-size(36px);
+  line-height: 1.5;
+}
+
+h2,
+.h2 {
+  @include font-size(24px);
+  line-height: 1.5;
+  color: $meadow-trail;
+}
+
+h3,
+.h3 {
+  @include font-size(20px);
+  line-height: 1.25;
+  color: $meadow-trail;
+}

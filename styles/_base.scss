@@ -1,0 +1,19 @@
+@import "./colors";
+@import "./variables";
+@import "functions";
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-size: font-weight(small);
+  color: $gun-powder;
+  background-color: $wild-sand;
+  line-height: 1;
+  font-weight: weight(regular);
+}
+
+.page {
+  margin: 0 34px;
+}

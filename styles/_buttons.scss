@@ -1,0 +1,14 @@
+@import "./mixins";
+@import "./colors";
+@import "./mixins";
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1;
+  @include font-size(18px);
+  @include hover-lift();
+}
