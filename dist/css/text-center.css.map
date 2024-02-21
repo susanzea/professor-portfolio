@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,YAAa;EACX,UAAU,EAAE,MAAM",
-"sources": ["../../styles/text-center.scss"],
-"names": [],
-"file": "text-center.css"
-}

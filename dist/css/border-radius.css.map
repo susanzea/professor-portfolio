@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,cAAe;EACb,aAAa,EAAE,MAAM;;AAGvB,kBAAmB;EACjB,aAAa,EAAE,iBAAiB;;AAGlC,MAAO;EACL,aAAa,EAAE,GAAG",
-"sources": ["../../styles/border-radius.scss"],
-"names": [],
-"file": "border-radius.css"
-}

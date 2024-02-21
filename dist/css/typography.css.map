@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAEA,WAAW;AAeX,iBAAiB;AAgBjB,aAAa;AA/Bb,WAAW;AAeX,iBAAiB;AAgBjB,aAAa;AC5Bb,UAAW;EACT,cAAc,EAAE,SAAS;;AAG3B;GACI;ECTF,SAAS,EDUU,IAAI;ECTvB,SAAS,EAAE,kBAAmB;EDU9B,WAAW,EAAE,GAAG;;AAGlB;GACI;ECfF,SAAS,EDgBU,IAAI;ECfvB,SAAS,EAAE,kBAAmB;EDgB9B,WAAW,EAAE,GAAG;EAChB,KAAK,EDkBqB,OAAa;;ACfzC;GACI;ECtBF,SAAS,EDuBU,IAAI;ECtBvB,SAAS,EAAE,kBAAmB;EDuB9B,WAAW,EAAE,IAAI;EACjB,KAAK,EDWqB,OAAa",
-"sources": ["../../styles/variables.scss","../../styles/typography.scss","../../styles/mixins.scss"],
-"names": [],
-"file": "typography.css"
-}
