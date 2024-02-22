@@ -1,0 +1,17 @@
+@import 'colors';
+@import 'variables';
+
+.button {
+  height: 35px;
+  width: 35px;
+  padding: 5px;
+  position: relative;
+  border: none;
+  cursor: pointer;
+  border-radius: $button-border;
+  background-color: transparent;
+
+  &:hover {
+    background-color: rgba($hit-grey, 0.2);
+  }
+}
