@@ -18,36 +18,45 @@ const navLinks = [
   { title: 'Fiction', href: '/fiction' },
 ];
 
-const MobileNav = ({ isOpen, setIsOpen }) => {};
+const ResponsiveNavbar = () => {
+  return (
+    <div className="overlay">
+      <div className={classes.responsiveNavbar}>mobile nav woo</div>
+    </div>
+  );
+};
 
 const Navbar = () => {
-  const [isMobileNavbarOpen, setIsMobileNavbarOpen] = useState(false);
+  const [isResponsiveNavbarOpen, setIsResponsiveNavbarOpen] = useState(false);
   const [selected, setSelected] = useState('Home');
   return (
-    <div className={classes.navbar}>
-      <div className={`${classes.professorName} uppercase`}>
-        Aníbal González
+    <>
+      {isResponsiveNavbarOpen && <ResponsiveNavbar />}
+      <div className={classes.navbar}>
+        <div className={`${classes.professorName} uppercase`}>
+          Aníbal González
+        </div>
+        <IconButton
+          className={classes.hamburger}
+          icon="hamburger"
+          onClick={() => setIsResponsiveNavbarOpen(true)}
+        />
+        <nav className={`${sourceSans3.className} ${classes.nav}`}>
+          {navLinks.map((nl, i) => (
+            <Link
+              key={i}
+              onClick={() => setSelected(nl.title)}
+              className={`${
+                nl.title === selected ? classes.selected : classes.notSelected
+              } ${classes[nl.className]}`}
+              href={nl.href}
+            >
+              {nl.title}
+            </Link>
+          ))}
+        </nav>
       </div>
-      <IconButton
-        className={classes.hamburger}
-        icon="hamburger"
-        onClick={() => alert('hi')}
-      />
-      <nav className={`${sourceSans3.className} ${classes.nav}`}>
-        {navLinks.map((nl, i) => (
-          <Link
-            key={i}
-            onClick={() => setSelected(nl.title)}
-            className={`${
-              nl.title === selected ? classes.selected : classes.notSelected
-            } ${classes[nl.className]}`}
-            href={nl.href}
-          >
-            {nl.title}
-          </Link>
-        ))}
-      </nav>
-    </div>
+    </>
   );
 };
 

@@ -24,3 +24,11 @@ body {
 .page {
   margin: 0 34px;
 }
+
+.overlay {
+  position: absolute;
+  background-color: rgba($hit-grey, 0.05);
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}

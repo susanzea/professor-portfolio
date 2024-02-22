@@ -70,3 +70,26 @@
     display: none;
   }
 }
+
+.responsiveNavbar {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 300px;
+  background-color: $wild-sand;
+  border-radius: $button-border;
+  box-shadow: 10px 5px 15px $hit-grey;
+
+  @media (min-width: $hamburger-menu) {
+    display: none;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 95vw;
+    top: 0;
+    right: 0;
+    margin-top: 15px;
+    margin-left: 2.5vw;
+    margin-right: 2.5vw;
+  }
+}
