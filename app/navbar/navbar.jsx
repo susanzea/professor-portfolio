@@ -26,7 +26,11 @@ const Navbar = () => {
   return (
     <div className={classes.navbar}>
       <div className={classes.professorName}>Aníbal González</div>
-      <IconButton icon="hamburger" onClick={() => alert('hi')} />
+      <IconButton
+        className={classes.hamburger}
+        icon="hamburger"
+        onClick={() => alert('hi')}
+      />
       <nav className={`${sourceSans3.className} ${classes.nav}`}>
         {navLinks.map((nl, i) => (
           <Link
