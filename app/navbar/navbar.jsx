@@ -25,7 +25,9 @@ const Navbar = () => {
   const [selected, setSelected] = useState('Home');
   return (
     <div className={classes.navbar}>
-      <div className={classes.professorName}>Aníbal González</div>
+      <div className={`${classes.professorName} uppercase`}>
+        Aníbal González
+      </div>
       <IconButton
         className={classes.hamburger}
         icon="hamburger"
