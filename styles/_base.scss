@@ -1,6 +1,8 @@
-@import "./colors";
-@import "./variables";
+@import "colors";
+@import "variables";
 @import "functions";
+@import "breakpoints";
+@import "mixins";
 
 a {
   color: inherit;
@@ -8,11 +10,15 @@ a {
 }
 
 body {
-  font-size: font-weight(small);
+  font-size: 16px;
   color: $gun-powder;
   background-color: $wild-sand;
   line-height: 1;
   font-weight: weight(regular);
+
+  @media (max-width: $breakpoint-xs) {
+    @include font-size(14px);
+  }
 }
 
 .page {
