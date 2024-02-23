@@ -30,6 +30,11 @@ const ResponsiveNavbar = ({
   setSelected,
   setIsResponsiveNavbarOpen,
 }) => {
+  const handleOnNavItemClick = (title) => {
+    setSelected(title);
+    setTimeout(() => setIsResponsiveNavbarOpen(false), 300);
+  };
+
   return (
     <div className={`${classes.overlay} overlay`}>
       <ClickAway onClickAway={() => setIsResponsiveNavbarOpen(false)}>
@@ -49,7 +54,7 @@ const ResponsiveNavbar = ({
                   height={20}
                 />
                 <Link
-                  onClick={() => setSelected(nl.title)}
+                  onClick={() => handleOnNavItemClick(nl.title)}
                   className={`${
                     nl.title === selected
                       ? classes.selected
