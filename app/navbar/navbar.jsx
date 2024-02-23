@@ -5,6 +5,7 @@ import Link from 'next/link';
 import classes from './navbar.module.scss';
 import IconButton from '../shared components/IconButton/iconButton';
 import Image from 'next/image';
+import ClickAway from '../../utils/customHooks/useClickAway';
 
 const sourceSans3 = Source_Sans_3({ subsets: ['latin'], weight: '500' });
 
@@ -31,34 +32,38 @@ const ResponsiveNavbar = ({
 }) => {
   return (
     <div className={`${classes.overlay} overlay`}>
-      <div className={`${classes.responsiveNavbar} uppercase`}>
-        <IconButton
-          className={classes.close}
-          onClick={() => setIsResponsiveNavbarOpen(false)}
-        />
-        <div className={`${classes.professorName}`}>Aníbal González</div>
-        <nav>
-          {navLinks.map((nl, i) => (
-            <div className={classes.navItem} key={i}>
-              <Image
-                src={nl.icon.src}
-                alt={nl.icon.alt}
-                width={20}
-                height={20}
-              />
-              <Link
-                onClick={() => setSelected(nl.title)}
-                className={`${
-                  nl.title === selected ? classes.selected : classes.notSelected
-                } ${sourceSans3.className}`}
-                href={nl.href}
-              >
-                {nl.title}
-              </Link>
-            </div>
-          ))}
-        </nav>
-      </div>
+      <ClickAway onClickAway={() => setIsResponsiveNavbarOpen(false)}>
+        <div className={`${classes.responsiveNavbar} uppercase`}>
+          <IconButton
+            className={classes.close}
+            onClick={() => setIsResponsiveNavbarOpen(false)}
+          />
+          <div className={`${classes.professorName}`}>Aníbal González</div>
+          <nav>
+            {navLinks.map((nl, i) => (
+              <div className={classes.navItem} key={i}>
+                <Image
+                  src={nl.icon.src}
+                  alt={nl.icon.alt}
+                  width={20}
+                  height={20}
+                />
+                <Link
+                  onClick={() => setSelected(nl.title)}
+                  className={`${
+                    nl.title === selected
+                      ? classes.selected
+                      : classes.notSelected
+                  } ${sourceSans3.className}`}
+                  href={nl.href}
+                >
+                  {nl.title}
+                </Link>
+              </div>
+            ))}
+          </nav>
+        </div>
+      </ClickAway>
     </div>
   );
 };

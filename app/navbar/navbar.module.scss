@@ -40,14 +40,6 @@
     background-color: pink;
     display: none;
   }
-
-  .selected {
-    border-bottom: 3px solid $hit-grey;
-  }
-
-  .notSelected {
-    border-bottom: 3px solid transparent;
-  }
 }
 
 .nav > a {
@@ -153,11 +145,33 @@
 
 .navItem {
   display: flex;
-  // justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
+  // height: 30px;
+  width: 100%;
+  padding: 20px 30px;
+
+  a {
+    padding-bottom: 3px;
+    padding-top: 3px;
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px dashed rgba($hit-grey, 0.3);
+  }
+
+  &:hover {
+    color: rgba($gun-powder, 0.7);
+  }
 
   img {
     margin-right: 15px;
   }
+}
+
+.selected {
+  border-bottom: 3px solid $hit-grey;
+}
+
+.notSelected {
+  border-bottom: 3px solid transparent;
 }

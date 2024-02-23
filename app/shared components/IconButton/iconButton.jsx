@@ -13,7 +13,6 @@ const IconButton = ({
   size = 'default',
 }) => {
   const { src, alt } = icons[icon];
-  console.log(className);
 
   return (
     <button
