@@ -85,6 +85,7 @@
     display: flex;
     flex-direction: column;
     padding: 15px 0;
+    margin: 35px 0 15px;
   }
 
   .professorName {
@@ -106,7 +107,6 @@
   a {
     @include font-size(20px);
     font-weight: weight(bold);
-    padding: 15px 25px;
   }
 
   @media (min-width: $hamburger-menu) {
@@ -124,5 +124,40 @@
       @include font-size(24px);
       font-weight: weight(bold);
     }
+  }
+}
+
+.close {
+  @media (max-width: $breakpoint-mobile) {
+    top: unset;
+    bottom: 30px;
+    height: 50px;
+    width: 50px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+    img {
+      height: 45px;
+      width: 45px;
+    }
+  }
+}
+
+.overlay {
+  @media (min-width: $hamburger-menu) {
+    display: none;
+  }
+}
+
+.navItem {
+  display: flex;
+  // justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+
+  img {
+    margin-right: 15px;
   }
 }

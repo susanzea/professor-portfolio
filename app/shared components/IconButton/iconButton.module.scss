@@ -15,3 +15,14 @@
     background-color: rgba($hit-grey, 0.2);
   }
 }
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  img {
+    filter: invert(13%) sepia(38%) saturate(6226%) hue-rotate(330deg)
+      brightness(81%) contrast(114%);
+  }
+}
