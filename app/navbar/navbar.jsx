@@ -18,10 +18,28 @@ const navLinks = [
   { title: 'Fiction', href: '/fiction' },
 ];
 
-const ResponsiveNavbar = () => {
+const ResponsiveNavbar = ({ selected, setSelected }) => {
   return (
     <div className="overlay">
-      <div className={classes.responsiveNavbar}>mobile nav woo</div>
+      <div className={`${classes.responsiveNavbar} uppercase`}>
+        <div className={`${classes.professorName} uppercase`}>
+          Aníbal González
+        </div>
+        <nav>
+          {navLinks.map((nl, i) => (
+            <Link
+              key={i}
+              onClick={() => setSelected(nl.title)}
+              className={`${
+                nl.title === selected ? classes.selected : classes.notSelected
+              } ${sourceSans3.className}`}
+              href={nl.href}
+            >
+              {nl.title}
+            </Link>
+          ))}
+        </nav>
+      </div>
     </div>
   );
 };
@@ -31,7 +49,9 @@ const Navbar = () => {
   const [selected, setSelected] = useState('Home');
   return (
     <>
-      {isResponsiveNavbarOpen && <ResponsiveNavbar />}
+      {isResponsiveNavbarOpen && (
+        <ResponsiveNavbar selected={selected} setSelected={setSelected} />
+      )}
       <div className={classes.navbar}>
         <div className={`${classes.professorName} uppercase`}>
           Aníbal González
@@ -41,7 +61,7 @@ const Navbar = () => {
           icon="hamburger"
           onClick={() => setIsResponsiveNavbarOpen(true)}
         />
-        <nav className={`${sourceSans3.className} ${classes.nav}`}>
+        <nav className={`${sourceSans3.className} ${classes.nav} uppercase`}>
           {navLinks.map((nl, i) => (
             <Link
               key={i}

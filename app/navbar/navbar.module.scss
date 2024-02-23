@@ -11,21 +11,21 @@
   padding: 5px 70px 5px 50px;
   border: 1px solid pink;
 
+  .professorName {
+    @include font-size(28px);
+    font-weight: weight(bold);
+    margin-right: 100px;
+    border: 1px solid pink;
+    text-wrap: nowrap;
+
+    @media (max-width: $breakpoint-xs) {
+      @include font-size(22px);
+      margin-right: 20px;
+    }
+  }
+
   @media (max-width: $breakpoint-xs) {
     padding: 5px 15px;
-  }
-}
-
-.professorName {
-  @include font-size(28px);
-  font-weight: weight(bold);
-  margin-right: 100px;
-  border: 1px solid pink;
-  text-wrap: nowrap;
-
-  @media (max-width: $breakpoint-xs) {
-    @include font-size(22px);
-    margin-right: 20px;
   }
 }
 
@@ -40,6 +40,14 @@
     background-color: pink;
     display: none;
   }
+
+  .selected {
+    border-bottom: 3px solid $hit-grey;
+  }
+
+  .notSelected {
+    border-bottom: 3px solid transparent;
+  }
 }
 
 .nav > a {
@@ -49,20 +57,11 @@
   padding: 0 20px;
   text-align: center;
   height: 100%;
-  text-transform: uppercase;
 }
 
 .academicWriting {
   width: 8rem;
   line-height: 0.85;
-}
-
-.selected {
-  border-bottom: 3px solid $hit-grey;
-}
-
-.notSelected {
-  border-bottom: 3px solid transparent;
 }
 
 .hamburger {
@@ -72,13 +71,43 @@
 }
 
 .responsiveNavbar {
+  display: flex;
+  flex-direction: column;
   position: absolute;
   top: 15px;
   right: 15px;
   width: 300px;
   background-color: $wild-sand;
-  border-radius: $button-border;
+  border-radius: 20px;
   box-shadow: 10px 5px 15px $hit-grey;
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0;
+  }
+
+  .professorName {
+    @include font-size(34px);
+    font-weight: weight(bold);
+    text-align: center;
+    margin-right: 0;
+    text-wrap: nowrap;
+    padding: 25px 0;
+    background-color: $gun-powder;
+    color: $wild-sand;
+    border-radius: 20px 20px 0 0;
+
+    @media (min-width: $breakpoint-mobile) {
+      display: none;
+    }
+  }
+
+  a {
+    @include font-size(20px);
+    font-weight: weight(bold);
+    padding: 15px 25px;
+  }
 
   @media (min-width: $hamburger-menu) {
     display: none;
@@ -86,10 +115,14 @@
 
   @media (max-width: $breakpoint-mobile) {
     width: 95vw;
+    height: 96vh;
     top: 0;
     right: 0;
-    margin-top: 15px;
-    margin-left: 2.5vw;
-    margin-right: 2.5vw;
+    margin: 2vh 2.5vw;
+
+    a {
+      @include font-size(24px);
+      font-weight: weight(bold);
+    }
   }
 }
