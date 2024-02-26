@@ -1,4 +1,4 @@
-@import "./colors";
+@import "colors";
 
 /* fonts */
 $font-weights: (
@@ -33,6 +33,6 @@ $box-shadow-5: 0px 6px 5px rgb(0, 0, 0.04), 0px 22px 18px rgb(0, 0, 0.06),
 
 /* buttons */
 $button-padding: 0.75em 2em;
-$button-border: 0;
+$button-border: 5px;
 
 $button-primary-background: $meadow-trail;

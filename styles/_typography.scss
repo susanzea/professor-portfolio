@@ -1,7 +1,8 @@
-@import "./colors";
-@import "./variables";
-@import "./functions";
-@import "./mixins";
+@import "colors";
+@import "breakpoints";
+@import "variables";
+@import "functions";
+@import "mixins";
 
 .uppercase {
   text-transform: uppercase;
@@ -18,6 +19,10 @@ h2,
   @include font-size(24px);
   line-height: 1.5;
   color: $meadow-trail;
+
+  @media (max-width: $breakpoint-sm) {
+    @include font-size(22px);
+  }
 }
 
 h3,
@@ -25,4 +30,8 @@ h3,
   @include font-size(20px);
   line-height: 1.25;
   color: $meadow-trail;
+
+  @media (max-width: $breakpoint-xs) {
+    @include font-size(18px);
+  }
 }

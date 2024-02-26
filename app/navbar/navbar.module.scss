@@ -1,0 +1,153 @@
+@import 'mixins';
+@import 'functions';
+@import 'colors';
+@import 'breakpoints';
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+  padding: 5px 70px 5px 50px;
+  border: 1px solid pink;
+
+  .professorName {
+    @include font-size(28px);
+    font-weight: weight(bold);
+    margin-right: 100px;
+    border: 1px solid pink;
+    text-wrap: nowrap;
+
+    @media (max-width: $breakpoint-xs) {
+      @include font-size(22px);
+      margin-right: 20px;
+    }
+  }
+
+  @media (max-width: $hamburger-menu) {
+    padding: 5px 15px;
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  @include font-size(16px);
+  height: 100%;
+  margin-right: 50px;
+
+  @media (max-width: $hamburger-menu) {
+    background-color: pink;
+    display: none;
+  }
+}
+
+.nav > a {
+  display: flex;
+  align-items: center;
+  font-weight: weight(bold);
+  padding: 0 20px;
+  text-align: center;
+  height: 100%;
+}
+
+.academicWriting {
+  width: 8rem;
+  line-height: 0.85;
+}
+
+.responsiveNavbar {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  width: 300px;
+  height: 100vh;
+  background-color: $wild-sand;
+  box-shadow: 10px 5px 15px $hit-grey;
+  transition: 0s ease;
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0;
+    margin: 35px 0 15px;
+  }
+
+  .professorName {
+    @include font-size(34px);
+    font-weight: weight(bold);
+    text-align: center;
+    margin-right: 0;
+    text-wrap: nowrap;
+    padding: 25px 0;
+    background-color: $gun-powder;
+    color: $wild-sand;
+
+    @media (min-width: $breakpoint-mobile) {
+      display: none;
+    }
+  }
+
+  a {
+    @include font-size(20px);
+    font-weight: weight(bold);
+  }
+
+  @media (min-width: $hamburger-menu) {
+    display: none;
+  }
+
+  @media (max-width: $breakpoint-xs) {
+    width: 100vw;
+    height: 100vh;
+    padding: 0 30px;
+
+    a {
+      @include font-size(24px);
+      font-weight: weight(bold);
+    }
+  }
+}
+
+.overlay {
+  @media (min-width: $hamburger-menu) {
+    display: none;
+  }
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 20px 30px 20px 50px;
+
+  a {
+    padding-bottom: 3px;
+    padding-top: 3px;
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px dashed rgba($hit-grey, 0.3);
+
+    @media (max-width: $breakpoint-xs) {
+      border-bottom: 1px dashed transparent;
+    }
+  }
+
+  &:hover {
+    color: rgba($gun-powder, 0.7);
+  }
+
+  img {
+    margin-right: 15px;
+  }
+}
+
+.selected {
+  border-bottom: 3px solid $hit-grey;
+}
+
+.notSelected {
+  border-bottom: 3px solid transparent;
+}
