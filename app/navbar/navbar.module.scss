@@ -57,9 +57,7 @@
 }
 
 .hamburger {
-  @media (min-width: $hamburger-menu) {
-    display: none;
-  }
+  z-index: 1000;
 }
 
 .responsiveNavbar {
@@ -89,7 +87,6 @@
     padding: 25px 0;
     background-color: $gun-powder;
     color: $wild-sand;
-    // border-radius: 20px 20px 0 0;
 
     @media (min-width: $breakpoint-mobile) {
       display: none;
@@ -109,9 +106,6 @@
     width: 100vw;
     height: 100vh;
     padding: 0 30px;
-    // top: 0;
-    // right: 0;
-    // margin: 2vh 2.5vw;
 
     a {
       @include font-size(24px);
@@ -160,4 +154,8 @@
 
 .notSelected {
   border-bottom: 3px solid transparent;
+}
+
+.close {
+  z-index: 1000;
 }

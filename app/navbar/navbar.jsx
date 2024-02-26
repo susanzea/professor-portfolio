@@ -52,10 +52,6 @@ const ResponsiveNavbar = ({
     <div className={`${classes.overlay} overlay`}>
       <ClickAway onClickAway={() => setIsResponsiveNavbarOpen(false)}>
         <div className={classes.responsiveNavbar}>
-          <IconButton
-            className={classes.close}
-            onClick={() => setIsResponsiveNavbarOpen(false)}
-          />
           <nav>
             {navLinks.map((nl, i) => (
               <div className={classes.navItem} key={i}>
@@ -88,6 +84,8 @@ const ResponsiveNavbar = ({
 const Navbar = () => {
   const [isResponsiveNavbarOpen, setIsResponsiveNavbarOpen] = useState(false);
   const [selected, setSelected] = useState('Home');
+  console.log(isResponsiveNavbarOpen);
+
   return (
     <>
       {isResponsiveNavbarOpen && (
@@ -101,11 +99,20 @@ const Navbar = () => {
         <div className={`${classes.professorName} uppercase`}>
           Aníbal González
         </div>
-        <IconButton
-          className={classes.hamburger}
-          icon="hamburger"
-          onClick={() => setIsResponsiveNavbarOpen(true)}
-        />
+        {isResponsiveNavbarOpen ? (
+          <IconButton
+            className={classes.close}
+            icon="close"
+            onClick={() => setIsResponsiveNavbarOpen(false)}
+          />
+        ) : (
+          <IconButton
+            className={classes.hamburger}
+            icon="hamburger"
+            onClick={() => setIsResponsiveNavbarOpen(true)}
+          />
+        )}
+
         <nav className={`${sourceSans3.className} ${classes.nav} uppercase`}>
           {navLinks.map((nl, i) => (
             <Link
