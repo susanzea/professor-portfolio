@@ -1,5 +1,5 @@
 import { Open_Sans } from 'next/font/google';
-import Navbar from './navbar/navbarOne';
+import Navbar from './navbar/navbar';
 import '../styles/style.scss';
 
 const openSans = Open_Sans({
