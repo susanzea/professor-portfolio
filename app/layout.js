@@ -18,6 +18,9 @@ export default function RootLayout({ children }) {
       <body className={openSans.className}>
         <Navbar />
         {children}
+        <footer>
+          <div>© 2024 Aníbal González</div>
+        </footer>
       </body>
     </html>
   );
