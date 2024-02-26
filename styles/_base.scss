@@ -32,3 +32,21 @@ body {
   height: 100vh;
   z-index: 1;
 }
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 80px;
+  @include font-size(14px);
+  background-color: $gun-powder;
+  color: $wild-sand;
+
+  @media (max-width: $hamburger-menu) {
+    height: 70px;
+    @include font-size(12px);
+  }
+}
