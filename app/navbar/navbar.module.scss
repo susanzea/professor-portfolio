@@ -56,10 +56,6 @@
   line-height: 0.85;
 }
 
-.hamburger {
-  z-index: 1000;
-}
-
 .responsiveNavbar {
   display: flex;
   flex-direction: column;
@@ -154,8 +150,4 @@
 
 .notSelected {
   border-bottom: 3px solid transparent;
-}
-
-.close {
-  z-index: 1000;
 }
