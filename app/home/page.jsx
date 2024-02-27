@@ -9,8 +9,8 @@ const Home = () => {
         <Image
           src={'/headshot.jpeg'}
           alt={'photo of Aníbal González'}
-          height={300}
-          width={300}
+          height={400}
+          width={400}
           style={{ objectFit: 'cover', maxWidth: '60%' }}
         />
         <div className="right">
@@ -28,7 +28,8 @@ const Home = () => {
             ea commodo consequat. Duis aute irure dolor in reprehenderit in
             voluptate velit esse cillum dolore eu fugiat nulla pariatur.
             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-            officia deserunt mollit anim id est laborum.
+            officia deserunt mollit anim id est laborum. Academic Writing
+            Academic Writing
           </p>
           <div className={classes.actions}>
             <Button text={'Curriculum Vitae'} icon={'download'} />
