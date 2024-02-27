@@ -2,3 +2,7 @@ $wild-sand: #f4f4f4;
 $gun-powder: #474853;
 $meadow-trail: #8e8268;
 $hit-grey: #aaa0a0;
+
+//filters
+$filter-wild-sand: invert(100%) sepia(2%) saturate(170%) hue-rotate(311deg)
+  brightness(116%) contrast(91%);

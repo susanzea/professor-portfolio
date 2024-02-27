@@ -5,10 +5,11 @@
 .btn {
   display: inline-flex;
   justify-content: center;
-  padding: 0.4rem 1rem;
+  padding: 0.4rem;
   cursor: pointer;
   text-decoration: none;
   line-height: 1;
+  border: none;
   @include font-size(18px);
   @include hover-lift();
 }
