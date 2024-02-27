@@ -1,18 +1,19 @@
 @import 'colors';
 
 .home {
-  display: flex;
+  // display: flex;
   background-color: $gun-powder;
   color: $wild-sand;
 }
 
-.right {
+.contentContainer {
+  display: flex;
 }
 
 .actions {
   display: flex;
   justify-content: center;
-  margin-bottom: 200px;
+  // margin-bottom: 200px;
   margin: 50px 0 0 0;
 
   button:first-child {

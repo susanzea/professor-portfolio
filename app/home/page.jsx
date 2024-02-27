@@ -5,7 +5,7 @@ import classes from './home.module.scss';
 const Home = () => {
   return (
     <div className={`${classes.home} page`}>
-      <div className="content-container">
+      <div className={`${classes.contentContainer} content-container`}>
         <Image
           src={'/headshot.jpeg'}
           alt={'photo of Aníbal González'}

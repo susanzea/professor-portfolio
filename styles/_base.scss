@@ -23,14 +23,12 @@ body {
 .page {
   display: flex;
   justify-content: center;
-  height: 100%;
-  width: 100%;
-  top: 64px;
   padding: 50px 34px 200px 24px;
 
   .content-container {
     min-width: 300px;
     width: 1000px;
+    min-height: calc(100vh - 394px);
     border: 1px solid red;
   }
 }
