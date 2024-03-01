@@ -11,6 +11,10 @@
   border-radius: $icon-button-border;
   background-color: transparent;
 
+  img {
+    filter: $filter-gun-powder;
+  }
+
   &:hover {
     background-color: rgba($hit-grey, 0.2);
   }

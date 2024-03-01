@@ -1,5 +1,7 @@
+'use client';
 import Image from 'next/image';
 import classes from './academicWriting.module.scss';
+import IconButton from '../shared components/IconButton/iconButton';
 
 const mockData = [
   {
@@ -89,6 +91,7 @@ const Item = ({ itemData }) => {
         </span>
       </h2>
       <p>{itemData.description}</p>
+      <IconButton icon="download" onClick={() => console.log('download')} />
     </div>
   );
 };

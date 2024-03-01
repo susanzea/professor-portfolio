@@ -4,6 +4,7 @@ import classes from './iconButton.module.scss';
 const icons = {
   hamburger: { src: '/hamburger.svg', alt: 'open nav links menu' },
   close: { src: '/xmark.svg', alt: 'close' },
+  download: { src: '/file-arrow-down.svg', alt: 'download file' },
 };
 
 const IconButton = ({
