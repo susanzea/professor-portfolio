@@ -35,3 +35,13 @@ h3,
     @include font-size(18px);
   }
 }
+
+p {
+  font-weight: weight(light);
+  letter-spacing: 1px;
+  line-height: 1.4;
+
+  @media (max-width: $breakpoint-xs) {
+    @include font-size(14px);
+  }
+}

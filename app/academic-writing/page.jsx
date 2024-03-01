@@ -1,5 +1,9 @@
 const AcademicWriting = () => {
-  return <div>Academic Writing</div>;
+  return (
+    <div className="page">
+      <div className="content-container">Academic Writing</div>
+    </div>
+  );
 };
 
 export default AcademicWriting;

@@ -4,18 +4,18 @@
 @import 'breakpoints';
 
 .navbar {
+  width: 100%;
+  background-color: $wild-sand;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 4rem;
   padding: 5px 70px 5px 50px;
-  border: 1px solid pink;
 
   .professorName {
     @include font-size(28px);
     font-weight: weight(bold);
     margin-right: 100px;
-    border: 1px solid pink;
     text-wrap: nowrap;
 
     @media (max-width: $breakpoint-xs) {
@@ -37,7 +37,6 @@
   margin-right: 50px;
 
   @media (max-width: $hamburger-menu) {
-    background-color: pink;
     display: none;
   }
 }
@@ -150,4 +149,10 @@
 
 .notSelected {
   border-bottom: 3px solid transparent;
+}
+
+.hamburger {
+  @media (min-width: $hamburger-menu) {
+    display: none;
+  }
 }

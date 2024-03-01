@@ -1,0 +1,22 @@
+@import 'colors';
+@import 'variables';
+
+.button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $wild-sand;
+  background-color: $meadow-trail;
+  border-radius: $button-border;
+  padding: 0.4rem 1rem;
+  width: 14rem;
+
+  .left {
+    width: 20px;
+    height: 20px;
+  }
+
+  img {
+    filter: $filter-wild-sand;
+  }
+}
