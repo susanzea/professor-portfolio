@@ -51,3 +51,18 @@
 .pubYear {
   color: $hit-grey;
 }
+
+.toTop {
+  // display: flex;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  // color: white;
+  // text-transform: uppercase;
+  border: none;
+  background-color: transparent;
+
+  img {
+    filter: $meadow-trail-filter;
+  }
+}
