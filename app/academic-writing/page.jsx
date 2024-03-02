@@ -7,7 +7,8 @@ const mockData = [
   {
     title: 'Title',
     publicationYear: 2021,
-    description: 'Lorem ipsum dolor sit ame',
+    description:
+      'Lorem ipsum dolor Lorem ipsum dolor s Lorem ipsum Lorem ipsum dolor s Lorem ipsum dolor s dolor s Lorem ipsum dolor s sfldklkmvlkmdflvmit  joidfjio ame',
   },
   {
     title: 'Title',
@@ -84,14 +85,20 @@ const mockData = [
 const Item = ({ itemData }) => {
   return (
     <div className={classes.item}>
-      <h2 className={classes.itemHeader}>
-        <span>{itemData.title}</span>
-        <span className={classes.pubYear}>
-          &nbsp;- {itemData.publicationYear}
-        </span>
-      </h2>
-      <p>{itemData.description}</p>
-      <IconButton icon="download" onClick={() => console.log('download')} />
+      <div>
+        <h2 className={classes.itemHeader}>
+          <span>{itemData.title}</span>
+          <span className={classes.pubYear}>
+            &nbsp;- {itemData.publicationYear}
+          </span>
+        </h2>
+        <p>{itemData.description}</p>
+      </div>
+      <IconButton
+        className={classes.iconButton}
+        icon="download"
+        onClick={() => console.log('download')}
+      />
     </div>
   );
 };
