@@ -106,40 +106,21 @@ const Item = ({ itemData }) => {
 };
 
 const AcademicWriting = () => {
-  let [nearBottom, setNearBottom] = useState(false);
-
-  const onScroll = useCallback(
-    (event) => {
-      const { innerHeight, scrollY } = window;
-      const distanceFromBottomOfPage =
-        document.body.scrollHeight - innerHeight - scrollY;
-
-      if (!nearBottom && distanceFromBottomOfPage < 150) {
-        console.log('unstick');
-        console.log(nearBottom);
-
-        setNearBottom(true);
-      }
-    },
-    [nearBottom, setNearBottom]
-  );
+  const [isScrollButtonVisible, setIsScrollButtonVisible] = useState(false);
 
   useEffect(() => {
-    //add eventlistener to window
-    window.addEventListener('scroll', onScroll, { passive: true });
-    // remove event on unmount to prevent a memory leak with the cleanup
-    return () => {
-      window.removeEventListener('scroll', onScroll, { passive: true });
-    };
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        setIsScrollButtonVisible(true);
+      } else {
+        setIsScrollButtonVisible(false);
+      }
+    });
   });
 
-  useEffect(() => {
-    console.log('hi');
-    const distanceToBottom =
-      document.body.scrollHeight - window.innerHeight - window.scrollY;
-
-    if (distanceToBottom < 100) setNearBottom = true;
-  }, []);
+  const scrollUp = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <NoSsr>
@@ -162,14 +143,11 @@ const AcademicWriting = () => {
             })}
           </div>
         </div>
-        <button className={classes.toTop}>
-          <Image
-            src="circle-chevron-up.svg"
-            alt="up arrow"
-            height={40}
-            width={40}
-          />
-        </button>
+        {isScrollButtonVisible && (
+          <button className={classes.toTop} onClick={scrollUp}>
+            <Image src="chevron-up.svg" alt="up arrow" height={25} width={25} />
+          </button>
+        )}
       </div>
     </NoSsr>
   );
