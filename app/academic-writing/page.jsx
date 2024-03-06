@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import classes from './academicWriting.module.scss';
+import './academicWriting.scss';
 import IconButton from '../shared components/Buttons/Icon/IconButton';
 import { useEffect, useState, useCallback } from 'react';
 import { mockData } from './mockData';
@@ -9,18 +9,16 @@ import NoSsr from '../NoSSR';
 
 const Item = ({ itemData }) => {
   return (
-    <div className={classes.item}>
+    <div className="item">
       <div>
-        <h2 className={classes.itemHeader}>
+        <h2 className="header">
           <span>{itemData.title}</span>
-          <span className={classes.pubYear}>
-            &nbsp;- {itemData.publicationYear}
-          </span>
+          <span className="pub-year">&nbsp;- {itemData.publicationYear}</span>
         </h2>
         <p>{itemData.description}</p>
       </div>
       <IconButton
-        className={classes.iconButton}
+        className="icon-button"
         icon="download"
         onClick={() => console.log('download')}
       />
@@ -30,19 +28,24 @@ const Item = ({ itemData }) => {
 
 const Toolbar = () => {
   return (
-    <div id="toolbar">
-      <div id="year">
+    <div className="toolbar">
+      <div className="year">
         <div>Year</div>
         <select>
+          <option>all</option>
+          <option>1980-1989</option>
           <option>1990-1999</option>
+          <option>2000-2009</option>
+          <option>2010-2019</option>
+          <option>2020-present</option>
         </select>
       </div>
 
       <div id="sort">
         <div>Sort by</div>
         <div>
-          <button>old</button>
           <button>new</button>
+          <button>old</button>
         </div>
       </div>
     </div>
@@ -52,9 +55,9 @@ const Toolbar = () => {
 const AcademicWriting = () => {
   return (
     <NoSsr>
-      <div className={`${classes.academicWriting} page`}>
+      <div className={`academic-writing page`}>
         <div
-          className={`${classes.header} header`}
+          className="page-header"
           style={{ width: '101vw', position: 'absolute' }}
         >
           <Image
@@ -64,7 +67,7 @@ const AcademicWriting = () => {
             objectFit="cover"
           />
         </div>
-        <div className={`${classes.contentContainer} content-container`}>
+        <div className="content-container">
           <Toolbar />
           <div className="index">
             {mockData.map((itemData, i) => {
