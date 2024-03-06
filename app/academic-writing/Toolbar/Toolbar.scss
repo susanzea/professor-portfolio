@@ -1,0 +1,19 @@
+@import 'colors';
+@import 'mixins';
+
+.academic-writing-toolbar {
+  display: flex;
+  justify-content: end;
+  border: 1px solid pink;
+  @include font-size(14px);
+  margin-bottom: 70px;
+
+  .label {
+    color: $meadow-trail;
+    margin-bottom: 10px;
+  }
+
+  .year {
+    margin-right: 40px;
+  }
+}

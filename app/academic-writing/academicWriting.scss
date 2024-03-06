@@ -19,16 +19,6 @@
   .content-container {
     margin-top: 300px;
 
-    .toolbar {
-      display: flex;
-      justify-content: end;
-      border: 1px solid pink;
-
-      .year {
-        margin-right: 40px;
-      }
-    }
-
     @media (max-width: $breakpoint-sm) {
       margin-top: 225px;
     }

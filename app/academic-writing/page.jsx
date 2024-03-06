@@ -6,6 +6,7 @@ import { useEffect, useState, useCallback } from 'react';
 import { mockData } from './mockData';
 import ScrollToTopButton from '../shared components/Buttons/ScrollToTop/ScrollToTopButton';
 import NoSsr from '../NoSSR';
+import Toolbar from './Toolbar/Toolbar';
 
 const Item = ({ itemData }) => {
   return (
@@ -22,32 +23,6 @@ const Item = ({ itemData }) => {
         icon="download"
         onClick={() => console.log('download')}
       />
-    </div>
-  );
-};
-
-const Toolbar = () => {
-  return (
-    <div className="toolbar">
-      <div className="year">
-        <div>Year</div>
-        <select>
-          <option>all</option>
-          <option>1980-1989</option>
-          <option>1990-1999</option>
-          <option>2000-2009</option>
-          <option>2010-2019</option>
-          <option>2020-present</option>
-        </select>
-      </div>
-
-      <div id="sort">
-        <div>Sort by</div>
-        <div>
-          <button>new</button>
-          <button>old</button>
-        </div>
-      </div>
     </div>
   );
 };
