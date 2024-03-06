@@ -52,30 +52,3 @@
 .pubYear {
   color: $hit-grey;
 }
-
-.toTop {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  border: none;
-  background-color: $meadow-trail;
-  border-radius: $icon-button-border;
-  cursor: pointer;
-  height: 35px;
-  width: 35px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  img {
-    filter: $white-filter;
-  }
-
-  @media (max-width: $breakpoint-sm) {
-    right: 0;
-    bottom: 70px;
-    border-radius: $icon-button-border 0 0 $icon-button-border;
-    height: 40px;
-    width: 40px;
-  }
-}

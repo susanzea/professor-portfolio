@@ -1,88 +1,11 @@
 'use client';
 import Image from 'next/image';
 import classes from './academicWriting.module.scss';
-import IconButton from '../shared components/IconButton/iconButton';
+import IconButton from '../shared components/Buttons/Icon/IconButton';
 import { useEffect, useState, useCallback } from 'react';
+import { mockData } from './mockData';
+import ScrollToTopButton from '../shared components/Buttons/ScrollToTop/ScrollToTopButton';
 import NoSsr from '../NoSSR';
-
-const mockData = [
-  {
-    title: 'Title',
-    publicationYear: 2021,
-    description:
-      'Lorem ipsum dolor Lorem ipsum dolor s Lorem ipsum Lorem ipsum dolor s Lorem ipsum dolor s dolor s Lorem ipsum dolor s sfldklkmvlkmdflvmit  joidfjio ame',
-  },
-  {
-    title: 'Title',
-    publicationYear: 1990,
-    description: 'Lorem ipsum dolor sit ame',
-  },
-  {
-    title: 'Title',
-    publicationYear: 1990,
-    description: 'Lorem ipsum dolor sit ame',
-  },
-  {
-    title: 'Title',
-    publicationYear: 1989,
-    description: 'Lorem ipsum dolor sit ame',
-  },
-  {
-    title: 'Title',
-    publicationYear: 2007,
-    description: 'Lorem ipsum dolor sit ame',
-  },
-  {
-    title: 'Title',
-    publicationYear: 2012,
-    description: 'Lorem ipsum dolor sit ame',
-  },
-  {
-    title: 'Title',
-    publicationYear: 1997,
-    description: 'Lorem ipsum dolor sit ame',
-  },
-  {
-    title: 'Title',
-    publicationYear: 2001,
-    description: 'Lorem ipsum dolor sit ame',
-  },
-  {
-    title: 'Title',
-    publicationYear: 1990,
-    description: 'Lorem ipsum dolor sit ame',
-  },
-  {
-    title: 'Title',
-    publicationYear: 2020,
-    description: 'Lorem ipsum dolor sit ame',
-  },
-  {
-    title: 'Title',
-    publicationYear: 1995,
-    description: 'Lorem ipsum dolor sit ame',
-  },
-  {
-    title: 'Title',
-    publicationYear: 1990,
-    description: 'Lorem ipsum dolor sit ame',
-  },
-  {
-    title: 'Title',
-    publicationYear: 1990,
-    description: 'Lorem ipsum dolor sit ame',
-  },
-  {
-    title: 'Title',
-    publicationYear: 1990,
-    description: 'Lorem ipsum dolor sit ame',
-  },
-  {
-    title: 'Title',
-    publicationYear: 2008,
-    description: 'Lorem ipsum dolor sit ame',
-  },
-];
 
 const Item = ({ itemData }) => {
   return (
@@ -105,23 +28,28 @@ const Item = ({ itemData }) => {
   );
 };
 
+const Toolbar = () => {
+  return (
+    <div id="toolbar">
+      <div id="year">
+        <div>Year</div>
+        <select>
+          <option>1990-1999</option>
+        </select>
+      </div>
+
+      <div id="sort">
+        <div>Sort by</div>
+        <div>
+          <button>old</button>
+          <button>new</button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const AcademicWriting = () => {
-  const [isScrollButtonVisible, setIsScrollButtonVisible] = useState(false);
-
-  useEffect(() => {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-        setIsScrollButtonVisible(true);
-      } else {
-        setIsScrollButtonVisible(false);
-      }
-    });
-  });
-
-  const scrollUp = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
     <NoSsr>
       <div className={`${classes.academicWriting} page`}>
@@ -137,17 +65,14 @@ const AcademicWriting = () => {
           />
         </div>
         <div className={`${classes.contentContainer} content-container`}>
+          <Toolbar />
           <div className="index">
             {mockData.map((itemData, i) => {
               return <Item key={i} itemData={itemData} />;
             })}
           </div>
         </div>
-        {isScrollButtonVisible && (
-          <button className={classes.toTop} onClick={scrollUp}>
-            <Image src="chevron-up.svg" alt="up arrow" height={25} width={25} />
-          </button>
-        )}
+        <ScrollToTopButton />
       </div>
     </NoSsr>
   );
