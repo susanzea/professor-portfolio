@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import classes from './button.module.scss';
+import classes from './DefaultButton.module.scss';
 
 const icons = {
   download: { src: '/file-arrow-down.svg', alt: 'download file' },
