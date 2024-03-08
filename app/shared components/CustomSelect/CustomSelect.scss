@@ -18,3 +18,9 @@ li[aria-selected='true'] {
 .select-button:not([aria-expanded='true']) + .select-dropdown {
   transform: scaleY(0);
 }
+
+@media (prefers-reduced-motion) {
+  .select-dropdown {
+    transition: none;
+  }
+}
