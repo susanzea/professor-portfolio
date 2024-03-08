@@ -194,6 +194,7 @@ const CustomSelect = ({
           {options.map(({ label, value: optionValue, tag }, index) => {
             return (
               <li
+                className="option"
                 key={optionValue}
                 id={`${namespace}_element_${optionValue}`}
                 aria-selected={index === activeIndex}

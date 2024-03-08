@@ -10,9 +10,42 @@ li[aria-selected='true'] {
   background: #ddd;
 }
 
+.select-button {
+  border: 1px solid $gun-powder;
+  background-color: $wild-sand;
+  color: $gun-powder;
+  padding: 5px;
+  border-radius: 8px 8px 0 0;
+}
+
+.select-container {
+  position: relative;
+}
+
 .select-dropdown {
   transform-origin: top center;
   transition: transform 0.2s;
+  position: absolute;
+  border: 1px solid transparent;
+  border-radius: 0 0 8px 8px;
+  width: 13rem;
+  top: 24px;
+  right: 0;
+
+  .option {
+    color: $wild-sand;
+    background-color: $gun-powder;
+
+    padding: 10px;
+
+    &:last-child {
+      border-radius: 0 0 8px 8px;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $wild-sand;
+    }
+  }
 }
 
 .select-button:not([aria-expanded='true']) + .select-dropdown {

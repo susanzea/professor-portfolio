@@ -18,7 +18,6 @@ const Toolbar = () => {
           options={options}
           value={selectedValue}
           onChange={setSelectedValue}
-          label={'labelHi'}
         />
       </div>
 
