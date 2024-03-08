@@ -8,13 +8,13 @@ const isSafari = () => {
 };
 
 const registerOpenDropdownHandlers = ({
+  options,
   optionsLength,
   activeIndex,
   setActiveIndex,
   select,
   namespace,
 }) => {
-  console.log('register');
   const keyDownCallback = (e) => {
     e.preventDefault();
     console.log(e);
@@ -61,7 +61,6 @@ const registerOpenDropdownHandlers = ({
             e.dataset && e.dataset.namespace === namespace + '-dropdown-root'
         )
     ) {
-      console.log('not found in path');
       // Did not found in path, closing
       e.preventDefault();
       select(false);
@@ -96,7 +95,6 @@ const registerClosedDropdownHandlers = ({ setIsDropdownOpen }) => {
 };
 
 const useAccessibleDropdown = ({ options, value, onChange, namespace }) => {
-  console.log('hi');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const listRef = useRef();
   const [activeIndex, setActiveIndex] = useState(0);
@@ -105,7 +103,7 @@ const useAccessibleDropdown = ({ options, value, onChange, namespace }) => {
   const select = useCallback(
     (value) => {
       if (value) {
-        console.log(`value: ${value}`);
+        console.log(`selected value: ${value}`);
         onChange && onChange(value);
       }
       setIsDropdownOpen(false);
@@ -117,6 +115,7 @@ const useAccessibleDropdown = ({ options, value, onChange, namespace }) => {
     if (isDropdownOpen) {
       console.log('dropdown open');
       return registerOpenDropdownHandlers({
+        options,
         activeIndex,
         setActiveIndex,
         optionsLength: options.length,
@@ -161,6 +160,7 @@ const CustomSelect = ({
     listRef,
   } = useAccessibleDropdown({ options, value, onChange, namespace });
   const chosen = options.find((o) => o.value === value);
+  console.log(`chosen: ${JSON.stringify(chosen)}`);
 
   return (
     <>
@@ -173,6 +173,7 @@ const CustomSelect = ({
       >
         <button
           className="select-button"
+          label="label"
           onClick={() => setIsDropdownOpen(!isDropdownOpen)}
           onFocus={() => setIsFocus(true)}
           onBlur={() => setIsFocus(false)}
@@ -184,6 +185,7 @@ const CustomSelect = ({
           aria-expanded={isDropdownOpen}
           aria-activedescendant={`${namespace}_element_${value}`}
         >
+          {console.log(chosen)}
           Selected: {chosen.label}
           <span className="chevron">▾</span>
         </button>
@@ -233,41 +235,41 @@ const CustomSelect = ({
   );
 };
 
-const options = [
-  {
-    value: 'kai',
-    label: 'Kai',
-    tag: 'Fire',
-  },
-  {
-    value: 'nya',
-    label: 'Nya',
-    tag: 'Water',
-  },
-  {
-    value: 'lloyd',
-    label: 'Lloyd',
-    tag: 'Life',
-  },
-  {
-    value: 'zane',
-    label: 'Zane',
-    tag: 'Ice',
-  },
-  {
-    value: 'cole',
-    label: 'Cole',
-    tag: 'Earth',
-  },
-  {
-    value: 'jay',
-    label: 'Jay',
-  },
-  {
-    value: 'garmadon',
-    label: 'Garmadon',
-  },
-];
+// const options = [
+//   {
+//     value: 'kai',
+//     label: 'Kai',
+//     tag: 'Fire',
+//   },
+//   {
+//     value: 'nya',
+//     label: 'Nya',
+//     tag: 'Water',
+//   },
+//   {
+//     value: 'lloyd',
+//     label: 'Lloyd',
+//     tag: 'Life',
+//   },
+//   {
+//     value: 'zane',
+//     label: 'Zane',
+//     tag: 'Ice',
+//   },
+//   {
+//     value: 'cole',
+//     label: 'Cole',
+//     tag: 'Earth',
+//   },
+//   {
+//     value: 'jay',
+//     label: 'Jay',
+//   },
+//   {
+//     value: 'garmadon',
+//     label: 'Garmadon',
+//   },
+// ];
 
 // const Wrapper = () => {
 //   const [v, setV] = useState('lloyd');

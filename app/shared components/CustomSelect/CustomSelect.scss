@@ -1,11 +1,11 @@
 @import 'colors';
 
-.select-button:not([aria-expanded='true']) + .select-dropdown {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-}
+// .select-button:not([aria-expanded='true']) + .select-dropdown {
+//   width: 0;
+//   height: 0;
+//   overflow: hidden;
+// }
 
-li[aria-selected='true'] {
-  background: #ddd;
-}
+// li[aria-selected='true'] {
+//   background: #ddd;
+// }
