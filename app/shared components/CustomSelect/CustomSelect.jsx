@@ -53,15 +53,10 @@ const registerOpenDropdownHandlers = ({
   };
 
   const onClick = (e) => {
-    if (
-      !e
-        .composedPath()
-        .find(
-          (e) =>
-            e.dataset && e.dataset.namespace === namespace + '-dropdown-root'
-        )
-    ) {
-      // Did not found in path, closing
+    const matchesNamespace = (e) =>
+      e.dataset && e.dataset.namespace === namespace + '-dropdown-root';
+    if (!e.composedPath().find(matchesNamespace)) {
+      // Did not found in the path, closing
       e.preventDefault();
       select(false);
     }
