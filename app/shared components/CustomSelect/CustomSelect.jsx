@@ -98,7 +98,6 @@ const useAccessibleDropdown = ({ options, value, onChange, namespace }) => {
   const select = useCallback(
     (value) => {
       if (value) {
-        console.log(`selected value: ${value}`);
         onChange && onChange(value);
       }
       setIsDropdownOpen(false);
@@ -108,7 +107,6 @@ const useAccessibleDropdown = ({ options, value, onChange, namespace }) => {
 
   useEffect(() => {
     if (isDropdownOpen) {
-      console.log('dropdown open');
       return registerOpenDropdownHandlers({
         options,
         activeIndex,
@@ -155,7 +153,6 @@ const CustomSelect = ({
     listRef,
   } = useAccessibleDropdown({ options, value, onChange, namespace });
   const chosen = options.find((o) => o.value === value);
-  console.log(`chosen: ${JSON.stringify(chosen)}`);
 
   return (
     <>
@@ -180,8 +177,7 @@ const CustomSelect = ({
           aria-expanded={isDropdownOpen}
           aria-activedescendant={`${namespace}_element_${value}`}
         >
-          {console.log(chosen)}
-          Selected: {chosen.label}
+          {chosen.label}
           <span className="chevron">▾</span>
         </button>
         <ul
@@ -194,7 +190,9 @@ const CustomSelect = ({
           {options.map(({ label, value: optionValue, tag }, index) => {
             return (
               <li
-                className="option"
+                className={`option ${
+                  chosen.value === optionValue ? 'checked' : 'unchecked'
+                } ${index === activeIndex ? 'active' : 'inactive'}`}
                 key={optionValue}
                 id={`${namespace}_element_${optionValue}`}
                 aria-selected={index === activeIndex}
@@ -206,9 +204,6 @@ const CustomSelect = ({
                     type="radio"
                     name={`${namespace}_radio`}
                     value={optionValue}
-                    className={
-                      chosen.value === optionValue ? 'checked' : 'unchecked'
-                    }
                     checked={chosen.value === optionValue}
                     onChange={() => select(optionValue)}
                   />
@@ -230,53 +225,5 @@ const CustomSelect = ({
     </>
   );
 };
-
-// const options = [
-//   {
-//     value: 'kai',
-//     label: 'Kai',
-//     tag: 'Fire',
-//   },
-//   {
-//     value: 'nya',
-//     label: 'Nya',
-//     tag: 'Water',
-//   },
-//   {
-//     value: 'lloyd',
-//     label: 'Lloyd',
-//     tag: 'Life',
-//   },
-//   {
-//     value: 'zane',
-//     label: 'Zane',
-//     tag: 'Ice',
-//   },
-//   {
-//     value: 'cole',
-//     label: 'Cole',
-//     tag: 'Earth',
-//   },
-//   {
-//     value: 'jay',
-//     label: 'Jay',
-//   },
-//   {
-//     value: 'garmadon',
-//     label: 'Garmadon',
-//   },
-// ];
-
-// const Wrapper = () => {
-//   const [v, setV] = useState('lloyd');
-//   return (
-//     <CustomSelect
-//       options={options}
-//       value={v}
-//       onChange={setV}
-//       label="Pick your favourite Ninjago character: "
-//     />
-//   );
-// };
 
 export default CustomSelect;

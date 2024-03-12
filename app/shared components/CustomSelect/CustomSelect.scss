@@ -1,55 +1,86 @@
 @import 'colors';
 
-.select-button:not([aria-expanded='true']) + .select-dropdown {
-  width: 0;
-  height: 0;
-  overflow: hidden;
-}
-
 li[aria-selected='true'] {
   background: #ddd;
 }
 
-.select-button {
-  border: 1px solid $gun-powder;
-  background-color: $wild-sand;
-  color: $gun-powder;
-  padding: 5px;
-  border-radius: 8px 8px 0 0;
-}
-
 .select-container {
   position: relative;
-}
 
-.select-dropdown {
-  transform-origin: top center;
-  transition: transform 0.2s;
-  position: absolute;
-  border: 1px solid transparent;
-  border-radius: 0 0 8px 8px;
-  width: 13rem;
-  top: 24px;
-  right: 0;
+  .select-button {
+    border: 2px solid $gun-powder;
+    background-color: $wild-sand;
+    color: $gun-powder;
+    padding: 7px 5px;
+    border-radius: 10px 10px 0 0;
+    width: 9rem;
 
-  .option {
-    color: $wild-sand;
-    background-color: $gun-powder;
-
-    padding: 10px;
-
-    &:last-child {
-      border-radius: 0 0 8px 8px;
+    .chevron {
+      position: absolute;
+      right: 10px;
+      margin-left: 10px;
+      filter: $filter-gun-powder;
     }
 
-    &:not(:last-child) {
-      border-bottom: 1px solid $wild-sand;
+    &:not([aria-expanded='true']) + .select-dropdown {
+      width: 0;
+      height: 0;
+      overflow: hidden;
+    }
+
+    &:not([aria-expanded='true']) + .select-dropdown {
+      transform: scaleY(0);
     }
   }
-}
 
-.select-button:not([aria-expanded='true']) + .select-dropdown {
-  transform: scaleY(0);
+  .select-dropdown {
+    transform-origin: top center;
+    transition: transform 0.2s;
+    position: absolute;
+    border: 1px solid transparent;
+    border-radius: 0 0 8px 8px;
+    width: 13rem;
+    top: 31px;
+    right: 0;
+
+    .option {
+      display: flex;
+      justify-content: center;
+      color: $wild-sand;
+      background-color: $gun-powder;
+
+      &:last-child {
+        border-radius: 0 0 8px 8px;
+      }
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $wild-sand;
+      }
+
+      label {
+        padding: 10px;
+        width: 100%;
+
+        input {
+          display: none;
+        }
+
+        span {
+          width: 100%;
+          display: block;
+        }
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $wild-sand;
+        }
+      }
+
+      &.active {
+        // background-color: rgba($gun-powder, 0.8);
+        filter: brightness(75%);
+      }
+    }
+  }
 }
 
 @media (prefers-reduced-motion) {
