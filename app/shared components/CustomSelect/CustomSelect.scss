@@ -1,4 +1,5 @@
 @import 'colors';
+@import 'mixins';
 
 li[aria-selected='true'] {
   background: #ddd;
@@ -10,9 +11,9 @@ li[aria-selected='true'] {
   .select-button {
     border: 2px solid $gun-powder;
     background-color: $wild-sand;
-    color: $gun-powder;
-    padding: 7px 5px;
-    border-radius: 10px 10px 0 0;
+    @include accent-text;
+    padding: 5px;
+    border-radius: 15px 15px 0 0;
     width: 9rem;
 
     .chevron {

@@ -12,24 +12,36 @@ const options = [
 ];
 
 const Toolbar = () => {
-  const [selectedValue, setSelectedValue] = useState('all');
-
+  const [selectedYear, setSelectedYear] = useState('all');
+  const [selectedSort, setSelectedSort] = useState('old');
   return (
     <div className="academic-writing-toolbar">
-      <div className="year">
+      <div id="year">
         <div className="label">Year</div>
         <CustomSelect
           options={options}
-          value={selectedValue}
-          onChange={setSelectedValue}
+          value={selectedYear}
+          onChange={setSelectedYear}
         />
       </div>
 
       <div id="sort">
         <div className="label">Sort by</div>
         <div>
-          <button>new</button>
-          <button>old</button>
+          <button
+            id="new"
+            className={selectedSort === 'new' ? 'selected' : null}
+            onClick={() => setSelectedSort('new')}
+          >
+            new
+          </button>
+          <button
+            id="old"
+            className={selectedSort === 'old' ? 'selected' : null}
+            onClick={() => setSelectedSort('old')}
+          >
+            old
+          </button>
         </div>
       </div>
     </div>
