@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Button from '../shared components/Button/Button';
+import Button from '../shared components/Buttons/Default/DefaultButton';
 import classes from './home.module.scss';
 
 const Home = () => {

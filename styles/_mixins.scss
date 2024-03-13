@@ -13,6 +13,12 @@
   }
 }
 
+@mixin accent-text() {
+  color: $gun-powder;
+  @include font-size(14px);
+  letter-spacing: 1px;
+}
+
 @mixin hover-lift() {
   transition: transform 150ms ease-in-out;
   box-shadow: 0 0.25em 0.5em 0 rgba(black, 0.2);

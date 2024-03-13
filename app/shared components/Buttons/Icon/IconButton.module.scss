@@ -4,12 +4,18 @@
 .button {
   height: 35px;
   width: 35px;
+  min-width: 35px;
+
   padding: 5px;
   position: relative;
   border: none;
   cursor: pointer;
   border-radius: $icon-button-border;
   background-color: transparent;
+
+  img {
+    filter: $filter-gun-powder;
+  }
 
   &:hover {
     background-color: rgba($hit-grey, 0.2);

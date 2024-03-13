@@ -4,7 +4,7 @@ import { motion, AnimatePresence, button, ul, li } from 'framer-motion';
 import { useState } from 'react';
 import Link from 'next/link';
 import classes from './navbar.module.scss';
-import IconButton from '../shared components/IconButton/iconButton';
+import IconButton from '../shared components/Buttons/Icon/IconButton';
 import Image from 'next/image';
 import ClickAway from '../../utils/customHooks/useClickAway';
 
