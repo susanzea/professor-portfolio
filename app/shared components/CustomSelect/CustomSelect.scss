@@ -77,7 +77,6 @@ li[aria-selected='true'] {
       }
 
       &.active {
-        // background-color: rgba($gun-powder, 0.8);
         filter: brightness(75%);
       }
     }
