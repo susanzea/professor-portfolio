@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import CustomSelect from '../../shared components/CustomSelect/CustomSelect';
-import './Toolbar.scss';
 import { compare } from '../../../utils/sortHelpers';
+import './Toolbar.scss';
 
 const options = [
   { label: 'all', value: 'all' },

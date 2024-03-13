@@ -9,9 +9,8 @@ const icons = {
 
 const IconButton = ({
   className = null,
-  icon = 'close', //hamburger
+  icon = 'close', //close, hamburger, download
   onClick = () => {},
-  size = 'default',
 }) => {
   const { src, alt } = icons[icon];
 

@@ -7,7 +7,11 @@ const icons = {
   link: { src: '/chevron-right.svg', alt: 'arrow right link' },
 };
 
-const Button = ({ text = 'add text', icon = null, onClick = () => null }) => {
+const Button = ({
+  text = 'add text',
+  icon = null, // download, link
+  onClick = () => null,
+}) => {
   return (
     <button className={`${classes.button} btn`} onClick={onClick}>
       {icon && <div className="left"></div>}

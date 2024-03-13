@@ -1,12 +1,12 @@
 'use client';
+import { useState } from 'react';
 import Image from 'next/image';
-import './academicWriting.scss';
 import IconButton from '../shared components/Buttons/Icon/IconButton';
-import { useEffect, useState, useCallback } from 'react';
-import { mockData } from './mockData';
 import ScrollToTopButton from '../shared components/Buttons/ScrollToTop/ScrollToTopButton';
-import NoSsr from '../NoSSR';
 import Toolbar from './Toolbar/Toolbar';
+import NoSsr from '../NoSSR';
+import { mockData } from './mockData';
+import './academicWriting.scss';
 
 const Item = ({ itemData }) => {
   return (
