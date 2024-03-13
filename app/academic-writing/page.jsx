@@ -40,8 +40,9 @@ const AcademicWriting = () => {
           <Image
             alt="A bookshelf with a picture of Aníbal, a statuette of the letter 'A' and books."
             src="/bookshelf.jpeg"
-            layout="fill"
-            objectFit="cover"
+            priority
+            fill
+            style={{ objectFit: 'cover' }}
           />
         </div>
         <div className="content-container">
