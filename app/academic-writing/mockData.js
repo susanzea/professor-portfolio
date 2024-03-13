@@ -47,7 +47,7 @@ export const mockData = [
   },
   {
     title: 'Title',
-    publicationYear: 2020,
+    publicationYear: 1981,
     description: 'Lorem ipsum dolor sit ame',
   },
   {
@@ -62,12 +62,12 @@ export const mockData = [
   },
   {
     title: 'Title',
-    publicationYear: 1990,
+    publicationYear: 2015,
     description: 'Lorem ipsum dolor sit ame',
   },
   {
     title: 'Title',
-    publicationYear: 1990,
+    publicationYear: 2002,
     description: 'Lorem ipsum dolor sit ame',
   },
   {

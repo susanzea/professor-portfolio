@@ -28,6 +28,8 @@ const Item = ({ itemData }) => {
 };
 
 const AcademicWriting = () => {
+  const [shownArticles, setShownArticles] = useState(mockData);
+
   return (
     <NoSsr>
       <div className={`academic-writing page`}>
@@ -43,9 +45,9 @@ const AcademicWriting = () => {
           />
         </div>
         <div className="content-container">
-          <Toolbar />
+          <Toolbar allArticles={mockData} setShownArticles={setShownArticles} />
           <div className="index">
-            {mockData.map((itemData, i) => {
+            {shownArticles.map((itemData, i) => {
               return <Item key={i} itemData={itemData} />;
             })}
           </div>
