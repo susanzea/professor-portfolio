@@ -1,7 +1,7 @@
 'use client';
-import { Source_Sans_3 } from 'next/font/google';
-import { motion, AnimatePresence, button, ul, li } from 'framer-motion';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
+import { Source_Sans_3 } from 'next/font/google';
 import Link from 'next/link';
 import classes from './navbar.module.scss';
 import IconButton from '../shared components/Buttons/Icon/IconButton';
@@ -40,11 +40,11 @@ const navLinks = [
 
 const ResponsiveNavbar = ({
   selected,
-  setSelected,
+  // setSelected,
   setIsResponsiveNavbarOpen,
 }) => {
   const handleOnNavItemClick = (title) => {
-    setSelected(title);
+    // setSelected(title);
     setTimeout(() => setIsResponsiveNavbarOpen(false), 300);
   };
 
@@ -68,7 +68,7 @@ const ResponsiveNavbar = ({
                 <Link
                   onClick={() => handleOnNavItemClick(nl.title)}
                   className={`${
-                    nl.title === selected
+                    nl.href === selected
                       ? classes.selected
                       : classes.notSelected
                   } ${sourceSans3.className}`}
@@ -87,13 +87,17 @@ const ResponsiveNavbar = ({
 
 const Navbar = () => {
   const [isResponsiveNavbarOpen, setIsResponsiveNavbarOpen] = useState(false);
-  const [selected, setSelected] = useState('Home');
+  // const searchParams = useSearchParams();
+  // const search = searchParams.get('search');
+  const pathName = usePathname();
+  // const [selected, setSelected] = useState('Home');
+
   return (
     <>
       {isResponsiveNavbarOpen && (
         <ResponsiveNavbar
           selected={selected}
-          setSelected={setSelected}
+          // setSelected={setSelected}
           setIsResponsiveNavbarOpen={setIsResponsiveNavbarOpen}
         />
       )}
@@ -110,9 +114,9 @@ const Navbar = () => {
           {navLinks.map((nl, i) => (
             <Link
               key={i}
-              onClick={() => setSelected(nl.title)}
+              // onClick={() => setSelected(nl.title)}
               className={`${
-                nl.title === selected ? classes.selected : classes.notSelected
+                nl.href === pathName ? classes.selected : classes.notSelected
               } ${classes[nl.className]}`}
               href={nl.href}
             >
