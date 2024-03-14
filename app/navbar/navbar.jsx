@@ -87,17 +87,13 @@ const ResponsiveNavbar = ({
 
 const Navbar = () => {
   const [isResponsiveNavbarOpen, setIsResponsiveNavbarOpen] = useState(false);
-  // const searchParams = useSearchParams();
-  // const search = searchParams.get('search');
-  const pathName = usePathname();
-  // const [selected, setSelected] = useState('Home');
+  const pathname = usePathname();
 
   return (
     <>
       {isResponsiveNavbarOpen && (
         <ResponsiveNavbar
-          selected={selected}
-          // setSelected={setSelected}
+          pathname={pathname}
           setIsResponsiveNavbarOpen={setIsResponsiveNavbarOpen}
         />
       )}
@@ -114,9 +110,8 @@ const Navbar = () => {
           {navLinks.map((nl, i) => (
             <Link
               key={i}
-              // onClick={() => setSelected(nl.title)}
               className={`${
-                nl.href === pathName ? classes.selected : classes.notSelected
+                nl.href === pathname ? classes.selected : classes.notSelected
               } ${classes[nl.className]}`}
               href={nl.href}
             >
