@@ -1,0 +1,30 @@
+@import 'breakpoints';
+@import 'mixins';
+@import 'colors';
+@import 'variables';
+
+.books {
+  border: 1px solid purple;
+
+  .content-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  #book-details,
+  #books-index {
+    min-height: 400px;
+  }
+
+  #book-details {
+    border: 1px solid green;
+    width: calc(100% - 300px);
+    min-width: 300px;
+  }
+  #books-index {
+    border: 1px solid pink;
+    width: 300px;
+    min-width: 300px;
+  }
+}

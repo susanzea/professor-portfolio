@@ -38,13 +38,8 @@ const navLinks = [
   },
 ];
 
-const ResponsiveNavbar = ({
-  selected,
-  // setSelected,
-  setIsResponsiveNavbarOpen,
-}) => {
+const ResponsiveNavbar = ({ selected, setIsResponsiveNavbarOpen }) => {
   const handleOnNavItemClick = (title) => {
-    // setSelected(title);
     setTimeout(() => setIsResponsiveNavbarOpen(false), 300);
   };
 
