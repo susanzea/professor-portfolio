@@ -4,9 +4,12 @@
 @import 'variables';
 
 .books {
-  border: 1px solid purple;
+  border: 2px solid purple;
+  padding: 0;
 
   .content-container {
+    width: 100%;
+    padding: 0;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -14,17 +17,27 @@
 
   #book-details,
   #books-index {
-    min-height: 400px;
+    min-height: 600px;
   }
 
   #book-details {
-    border: 1px solid green;
-    width: calc(100% - 300px);
-    min-width: 300px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid green;
+    width: calc(100% - 400px);
+    min-width: 400px;
+    padding: 50px;
+
+    .cover {
+      margin-right: 60px;
+    }
   }
+
   #books-index {
-    border: 1px solid pink;
-    width: 300px;
-    min-width: 300px;
+    border: 2px solid pink;
+    width: 400px;
+    min-width: 400px;
   }
 }
