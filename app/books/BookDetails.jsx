@@ -12,7 +12,7 @@ const BookDetails = ({ selectedBook }) => {
         style={{ objectFit: 'cover' }}
       />
       <div className="text">
-        <h4>{selectedBook.title}</h4>
+        <h2>{selectedBook.title}</h2>
         <p>{selectedBook.description}</p>
       </div>
     </div>
