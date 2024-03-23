@@ -4,7 +4,6 @@
 @import 'variables';
 
 .books {
-  border: 2px solid purple;
   padding: 0;
 
   .content-container {
@@ -23,6 +22,7 @@
   }
 
   #books-index {
+    border: 1px solid pink;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -36,8 +36,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    border: 2px solid green;
-    width: calc(100% - 500px);
+    width: calc(100% - 400px);
     min-width: 600px;
     margin: 50px;
 
@@ -59,7 +58,8 @@
 
       /* width */
       &::-webkit-scrollbar {
-        width: 7px;
+        background: pink;
+        width: 5px;
       }
 
       /* Track */
@@ -69,39 +69,18 @@
 
       /* Handle */
       &::-webkit-scrollbar-thumb {
-        background: #888;
+        background: rgba($gun-powder, 0.5);
       }
 
       /* Handle on hover */
       &::-webkit-scrollbar-thumb:hover {
-        background: #555;
+        background: rgba($gun-powder, 0.8);
       }
     }
   }
 
   #books-index {
-    border: 2px solid pink;
-    width: 400px;
-    min-width: 400px;
+    width: 300px;
+    min-width: 300px;
   }
 }
-
-// /* width */
-// ::-webkit-scrollbar {
-//   width: 10px;
-// }
-
-// /* Track */
-// ::-webkit-scrollbar-track {
-//   background: #f1f1f1;
-// }
-
-// /* Handle */
-// ::-webkit-scrollbar-thumb {
-//   background: #888;
-// }
-
-// /* Handle on hover */
-// ::-webkit-scrollbar-thumb:hover {
-//   background: #555;
-// }
