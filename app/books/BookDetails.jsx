@@ -1,19 +1,17 @@
-import Image from 'next/image';
+/* eslint-disable @next/next/no-img-element */
 
 const BookDetails = ({ selectedBook }) => {
   return (
     <div id="book-details">
-      <Image
+      <img
         className="cover"
-        src={selectedBook.image}
         alt={'photo of book cover'}
-        height={500}
-        width={350}
-        style={{ objectFit: 'cover' }}
+        src={selectedBook.image}
       />
+
       <div className="text">
         <h2>{selectedBook.title}</h2>
-        <p>{selectedBook.description}</p>
+        <span>{selectedBook.description}</span>
       </div>
     </div>
   );
