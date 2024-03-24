@@ -11,7 +11,11 @@ const Books = () => {
   return (
     <div className={'books page'}>
       <div className="content-container">
-        <BookDetails selectedBook={booksByIdx[selectedBookIdx]} />
+        <BookDetails
+          selectedBook={booksByIdx[selectedBookIdx]}
+          selectedBookIdx={selectedBookIdx}
+          setSelectedBookIdx={setSelectedBookIdx}
+        />
         <BooksIndex
           booksByIdx={booksByIdx}
           selectedBookIdx={selectedBookIdx}
