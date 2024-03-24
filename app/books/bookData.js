@@ -21,7 +21,11 @@ export const booksByIdx = {
         Poniatowska and Fernando Vallejo to Roberto Bolaño.
         <br />
         <br />
-        <a className="link" href="https://upittpress.org/books/9780822965046/">
+        <a
+          className="link"
+          href="https://upittpress.org/books/9780822965046/"
+          target="_blank"
+        >
           Read more
         </a>
         <br />
