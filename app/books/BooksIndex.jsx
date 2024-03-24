@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import Image from 'next/image';
 
 const BookItem = ({ idx, bookData, setSelectedBookIdx }) => {
   return (
@@ -13,14 +12,6 @@ const BookItem = ({ idx, bookData, setSelectedBookIdx }) => {
         alt={`photo of ${bookData.title}'s book cover`}
         src={bookData.image}
       />
-      {/* <Image
-        className="cover"
-        src={bookData.image}
-        alt={`book cover of ${bookData.title}`}
-        height={150}
-        width={100}
-        style={{ objectFit: 'cover' }}
-      /> */}
     </div>
   );
 };
