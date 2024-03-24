@@ -8,6 +8,15 @@
   text-transform: uppercase;
 }
 
+.bold {
+  font-weight: weight(bold);
+}
+
+.link {
+  color: $meadow-trail;
+  text-decoration: underline;
+}
+
 h1,
 .h1 {
   @include font-size(36px);

@@ -32,7 +32,7 @@ const AcademicWriting = () => {
 
   return (
     <NoSsr>
-      <div className={`academic-writing page`}>
+      <div className={'academic-writing page'}>
         <div
           className="page-header"
           style={{ width: '101vw', position: 'absolute' }}

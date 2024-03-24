@@ -5,6 +5,8 @@ const icons = {
   hamburger: { src: '/hamburger.svg', alt: 'open nav links menu' },
   close: { src: '/xmark.svg', alt: 'close' },
   download: { src: '/file-arrow-down.svg', alt: 'download file' },
+  left: { src: '/chevron-left.svg', alt: 'chevron left' },
+  right: { src: '/chevron-right.svg', alt: 'chevron right' },
 };
 
 const IconButton = ({
@@ -16,7 +18,7 @@ const IconButton = ({
 
   return (
     <button
-      className={`${classes.button} ${classes[icon]} ${className}`}
+      className={`${classes.button} button icon-button ${icon} ${className}`}
       onClick={onClick}
     >
       <Image src={src} alt={alt} height={25} width={25} />
