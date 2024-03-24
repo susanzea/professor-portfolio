@@ -32,6 +32,12 @@ const navLinks = [
   },
   {
     id: 3,
+    title: 'Chapters',
+    href: '/chapters',
+    icon: { src: '/book-open.svg', alt: 'open book' },
+  },
+  {
+    id: 4,
     title: 'Fiction',
     href: '/fiction',
     icon: { src: '/user-astronaut.svg', alt: 'astronaut with a helmet on' },
