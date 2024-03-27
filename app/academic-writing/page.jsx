@@ -3,9 +3,10 @@ import { useState } from 'react';
 import Image from 'next/image';
 import IconButton from '../shared components/Buttons/Icon/IconButton';
 import ScrollToTopButton from '../shared components/Buttons/ScrollToTop/ScrollToTopButton';
-import Toolbar from './Toolbar/Toolbar';
+import Toolbar from '../shared components/WritingIndex/Toolbar/Toolbar';
 import NoSsr from '../NoSSR';
 import { mockData } from './mockData';
+import WritingIndex from '../shared components/WritingIndex/WritingIndex';
 import './academicWriting.scss';
 
 const Item = ({ itemData }) => {
@@ -28,7 +29,7 @@ const Item = ({ itemData }) => {
 };
 
 const AcademicWriting = () => {
-  const [shownArticles, setShownArticles] = useState(mockData);
+  // const [shownArticles, setShownArticles] = useState(mockData);
 
   return (
     <NoSsr>
@@ -45,15 +46,7 @@ const AcademicWriting = () => {
             style={{ objectFit: 'cover' }}
           />
         </div>
-        <div className="content-container">
-          <Toolbar allArticles={mockData} setShownArticles={setShownArticles} />
-          <div className="index">
-            {shownArticles.map((itemData, i) => {
-              return <Item key={i} itemData={itemData} />;
-            })}
-          </div>
-        </div>
-        <ScrollToTopButton />
+        <WritingIndex allItems={mockData} />
       </div>
     </NoSsr>
   );

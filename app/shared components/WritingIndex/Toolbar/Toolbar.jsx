@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import CustomSelect from '../../shared components/CustomSelect/CustomSelect';
-import { compare } from '../../../utils/sortHelpers';
+import CustomSelect from '../../CustomSelect/CustomSelect';
+import { compare } from '../../../../utils/sortHelpers';
 import './Toolbar.scss';
 
 const options = [
@@ -12,12 +12,12 @@ const options = [
   { label: '1980-1989', value: '1980-1989' },
 ];
 
-const Toolbar = ({ allArticles, setShownArticles }) => {
+const Toolbar = ({ allItems, setShownItems }) => {
   const [selectedYear, setSelectedYear] = useState('all');
   const [selectedSort, setSelectedSort] = useState('desc');
 
   useEffect(() => {
-    let _articles = allArticles;
+    let _articles = allItems;
 
     if (selectedYear !== 'all') {
       let [start, end] = selectedYear.split('-');
@@ -36,8 +36,8 @@ const Toolbar = ({ allArticles, setShownArticles }) => {
       compare(a.publicationYear, b.publicationYear, selectedSort)
     );
 
-    setShownArticles(sorted);
-  }, [selectedYear, selectedSort, allArticles, setShownArticles]);
+    setShownItems(sorted);
+  }, [selectedYear, selectedSort, allItems, setShownItems]);
 
   return (
     <div className="academic-writing-toolbar">
