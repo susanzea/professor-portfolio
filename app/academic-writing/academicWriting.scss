@@ -9,46 +9,21 @@
 
   .page-header {
     height: 250px;
-
-    @media (max-width: $breakpoint-sm) {
-      height: 175px;
-      border: 3px solid green;
-    }
   }
 
   .content-container {
-    margin-top: 300px;
-
-    @media (max-width: $breakpoint-sm) {
-      margin-top: 225px;
-    }
+    margin-top: 275px;
   }
 }
 
-.item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 50px;
-  padding: 5px;
-
-  .header {
-    @include font-size(18px);
-    margin-bottom: 5px;
-
-    .pub-year {
-      color: $hit-grey;
+@media (max-width: $breakpoint-sm) {
+  .academic-writing {
+    .page-header {
+      height: 175px;
     }
-  }
 
-  .icon-button {
-    visibility: hidden;
-    margin-left: 25px;
-  }
-
-  &:hover {
-    .icon-button {
-      visibility: visible;
+    .content-container {
+      margin-top: 200px;
     }
   }
 }

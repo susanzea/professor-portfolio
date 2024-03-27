@@ -1,0 +1,42 @@
+@import 'breakpoints';
+@import 'mixins';
+@import 'colors';
+@import 'variables';
+
+.writing-index-container {
+  .content-container {
+    margin-top: 300px;
+
+    @media (max-width: $breakpoint-sm) {
+      margin-top: 225px;
+    }
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    padding: 5px;
+
+    .header {
+      @include font-size(18px);
+      margin-bottom: 5px;
+
+      .pub-year {
+        color: $hit-grey;
+      }
+    }
+
+    .icon-button {
+      visibility: hidden;
+      margin-left: 25px;
+    }
+
+    &:hover {
+      .icon-button {
+        visibility: visible;
+      }
+    }
+  }
+}
