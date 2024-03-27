@@ -1,7 +1,10 @@
+'use client';
 import { useState } from 'react';
 import IconButton from '../Buttons/Icon/IconButton';
 import Toolbar from './Toolbar/Toolbar';
 import ScrollToTopButton from '../Buttons/ScrollToTop/ScrollToTopButton';
+import NoSsr from '../../NoSsr';
+import './_WritingIndex.scss';
 
 const Item = ({ itemData }) => {
   return (
@@ -31,16 +34,19 @@ const WritingIndex = ({
 
   return (
     <>
-      <div className="content-container">
-        {includeToolbar && (
-          <Toolbar allItems={allItems} setShownItems={setShownItems} />
-        )}
-        <div className="index">
-          {shownItems.map((itemData, i) => {
-            return <Item key={i} itemData={itemData} />;
-          })}
+      <NoSsr>
+        <div className="writing-index-container">
+          {includeToolbar && (
+            <Toolbar allItems={allItems} setShownItems={setShownItems} />
+          )}
+          <div className="index">
+            {shownItems.map((itemData, i) => {
+              return <Item key={i} itemData={itemData} />;
+            })}
+          </div>
         </div>
-      </div>
+      </NoSsr>
+
       {includeScrollToTop && <ScrollToTopButton />}
     </>
   );
