@@ -12,6 +12,7 @@ const Button = ({
   icon = null, // download, link
   onClick = () => null,
 }) => {
+  console.log(props);
   return (
     <button className={`${classes.button} btn`} onClick={onClick}>
       {icon && <div className="left"></div>}
