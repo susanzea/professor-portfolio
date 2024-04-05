@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Button from '../shared components/Buttons/Default/DefaultButton';
 import classes from './home.module.scss';
+import Link from 'next/link';
 
 const Home = () => {
   return (
@@ -33,7 +34,13 @@ const Home = () => {
           </p>
           <div className={classes.actions}>
             <Button text={'Curriculum Vitae'} icon={'download'} />
-            <Button text={'Faculty Page'} icon={'link'} />
+            <Link
+              target="_blank"
+              href="https://span-port.yale.edu/people/anibal-gonzalez-perez"
+              rel="noopener noreferrer"
+            >
+              <Button text={'Faculty Page'} icon={'link'} />
+            </Link>
           </div>
         </div>
       </div>
