@@ -33,7 +33,14 @@ const Home = () => {
             Academic Writing
           </p>
           <div className={classes.actions}>
-            <Button text={'Curriculum Vitae'} icon={'download'} />
+            <Link
+              target="_blank"
+              href="https://1drv.ms/b/s!Ap42CM_mSswmbh19ceUBM26xlQA?e=kpMrjV"
+              rel="noopener noreferrer"
+            >
+              <Button text={'Curriculum Vitae'} icon={'download'} />
+            </Link>
+
             <Link
               target="_blank"
               href="https://span-port.yale.edu/people/anibal-gonzalez-perez"
