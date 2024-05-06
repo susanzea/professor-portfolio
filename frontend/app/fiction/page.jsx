@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Button from '../shared components/Buttons/Default/DefaultButton';
 import Image from 'next/image';
 import classes from './home.module.scss';
@@ -35,7 +36,13 @@ const Fiction = () => {
               meteoritos.
             </p>
             <div className={classes.actions}>
-              <Button text={'Buy on Amazon'} icon={'link'} />
+              <Link
+                target="_blank"
+                href="https://www.amazon.com/Aniaram-Novela-Spanish-An%C3%ADbal-Gonz%C3%A1lez/dp/B0BQ9JB3JX/ref=sr_1_1?crid=BNIENV5Y672O&dib=eyJ2IjoiMSJ9.qpd0N_u3d8ePLyszo-XvxgcvAdO_HFctrYlHzx4O5QwEy4j0AOEGqfXHVwV3_ePl8m29ioYjA-KlmrHffIlZ9JYfy0R1jcyKwvLSXnbq7JxKIO00UI4ANZLma9qJlsr2__QggHYny_McByMT8gBtijU3IggWGZoWZkIHuEzfFNhIfGZUwR44rxsjU4-o5xX2u3O9SNDMEFFH9RE_KLN51xH9OYJc24ua3gtvP1VLzwM.xHo19-sBaEd5wAki54drXWe75hGaq8dmvHiE0UNdOt8&dib_tag=se&keywords=aniaram+anibal+gonzalez&qid=1715020500&sprefix=aniaram+anibal+gonzalez%2Caps%2C96&sr=8-1"
+                rel="noopener noreferrer"
+              >
+                <Button text={'Buy on Amazon'} icon={'link'} />
+              </Link>
             </div>
           </div>
         </div>
